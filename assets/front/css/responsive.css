@@ -1,0 +1,222 @@
+/* Minimum 576 PX */
+@media only screen and (min-width:576px) {
+    
+}
+
+/* ===================================================== */
+
+/* Minimum 768 PX */
+@media only screen and (min-width:768px) {
+    .mob_dash_pre{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    #carousels::before{
+        width: 55%;
+        min-height: 50%;
+        border-radius: 0 15px 15px 0;
+    }
+
+    #SaysCarousel .owl-nav{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+/* ===================================================== */
+
+/* Minimum 992 PX */
+@media only screen and (min-width:992px) {
+    .splashes.sqrs-top{
+        content: url('../images/squares.svg');
+        top: 100px;
+        left: 150px;
+        width: 80px;
+        height: 80px;
+        /* transform: rotate(45deg); */
+    }
+
+    .carousel-main{
+        width: calc(100% - 30px);
+    }
+}
+
+/* ===================================================== */
+
+/* Minimum 1025 PX */
+@media only screen and (min-width:1025px) {
+    /* Hover Css */
+    header#MainMenu:hover{
+        left: calc(100% - var(--menu-width));
+    }
+    .tab_app{
+        text-align: justify;
+    }
+}
+
+/* ===================================================== */
+
+/* Minimum 1200px */
+@media only screen and (min-width:1200px) {
+    #banner-main{
+        min-height: 100vh;
+    }
+    #banner-main .flex-banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 150px);
+    }
+    
+    #pricing{
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .footer-light{
+        padding-top: 100px!important;
+    }
+    
+}
+
+@media only screen and (min-width:1367px){
+    
+}
+
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+
+/*
+* FROM 0 TO MAX
+*/
+
+
+/* Maximum 1200 PX */
+@media only screen and (max-width:1200px) {
+    
+}
+
+/* ===================================================== */
+
+/* Maximum 1024 PX */
+@media only screen and (max-width:1024px) {
+    header{
+        left: calc(100% - 10px);
+    }
+
+    header.showMenu{
+        left: calc(100% - var(--menu-width));
+    }
+
+    #MainMenu.showMenu nav > ul > li.nav-item > a.nav-link{
+        padding-left: 2rem;
+    }
+}
+
+/* ===================================================== */
+
+/* Maximum 991 PX */
+@media only screen and (max-width:991px) {
+    
+}
+
+/* ===================================================== */
+
+/* Maximum 767 PX */
+@media only screen and (max-width:767px) {
+    .says_tab .say_row{
+        flex-direction: column;
+        text-align: center;
+    }
+    .says_tab .say_row > .image_blk{
+        margin: 0 auto;
+    }
+    #SaysCarousel .owl-nav{
+        position: relative;
+    }
+
+    .why_img{
+        margin-bottom: 3rem;
+    }
+}
+
+/* ===================================================== */
+
+/* Maximum 575 PX */
+@media only screen and (max-width:575px) {
+    .section_featurs2{
+        text-align: center;
+    }
+    .section_featurs2 .tab_list > .nav > li > button{
+        font-size: 1.4rem;
+        padding: .7rem 1rem;
+    }
+
+    .blog_card.bl_list .image_thumb{
+        width: 100px;
+        height: 100%;
+        padding-bottom: 80%;
+    }
+
+    .blog_card .content_col .title{
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    .blog_card .content_col .excerpt{
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .footer-links{
+        justify-content: space-between;
+    }
+    .footer-links .f_link{
+        width: 150px;
+    }
+    .footer-dark{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .ft_logo{
+        display: block;
+        width: 100%;
+        transform: none;
+        transform-origin: inherit;
+        text-align: center;
+        margin-right: 0px;
+        margin-bottom: 2rem;
+    }
+    .ft_logo .fl-rotate{
+        width: 200px;
+    }
+}
+
+/* ===================================================== */
+
+/* Maximum 480 PX */
+@media only screen and (max-width:480px) {
+    
+}
+
+/* ===================================================== */
+
+/* Maximum 320 PX */
+@media only screen and (max-width:320px) {
+    .appTab .at_inner{
+        width: 100px;
+        height: 100px;
+    }
+    .appTab .at_inner svg{
+        max-width: 50px;
+        height: 100px;
+    }
+
+    .footer-links .f_link{
+        width: 120px;
+    }
+}

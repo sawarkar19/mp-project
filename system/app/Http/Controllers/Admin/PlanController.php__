@@ -1,0 +1,158 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Plan;
+
+use App\Models\User;
+
+class PlanController extends Controller
+{
+    protected $id;
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+       $posts=Plan::withCount('active_users')->latest()->get();
+       // dd($posts);
+       return view('admin.plan.index',compact('posts'));
+   }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.plan.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // dd($request);
+
+        if($request->is_default == 1){
+            Plan::where('is_default',1)->update(['is_default'=>0]);
+        }
+        $plan=new Plan;
+        $plan->name=$request->name;
+        $plan->description=$request->description;
+        $plan->price=$request->price;
+        $plan->days=$request->days;
+        $plan->future_limit=$request->future_limit;
+        $plan->instant_limit=$request->instant_limit;
+        $plan->redeem_limit=$request->redeem_limit;
+        $plan->employee_limit=$request->employee_limit;
+        $plan->support_limit=$request->support_limit;
+        $plan->statistic_limit=$request->statistic_limit;
+        $plan->template_limit=$request->template_limit;
+        $plan->status=$request->status;
+        $plan->featured=$request->featured;
+        $plan->is_default=$request->is_default;
+        $plan->backgroundColor=$request->backgroundColor;
+
+        $plan->save();
+
+        return response()->json(['Plan Created']);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $this->id=$id;
+       
+        $customers=User::where('role_id',2)->whereHas('user_plan',function($q){
+            return $q->where('plan_id',$this->id);
+        })->with('user_plan')->latest()->paginate(40);
+
+        //dd($customers);
+
+        return view('admin.plan.show',compact('customers'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $info=Plan::find($id);
+        return view('admin.plan.edit',compact('info'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+
+        $check = Plan::where('price', 0)->first();
+        if($check && $request->price == 0){
+            return response()->json(['Sorry free plan is already exists.']);
+        }
+        if($request->is_default == 1){
+            Plan::where('is_default',1)->update(['is_default'=>0]);
+        }
+        $plan=Plan::find($id);
+        $plan->name=$request->name;
+        $plan->description=$request->description;
+        $plan->price=$request->price;
+        $plan->days=$request->days;
+        $plan->future_limit=$request->future_limit;
+        $plan->instant_limit=$request->instant_limit;
+        $plan->redeem_limit=$request->redeem_limit;
+        $plan->support_limit=$request->support_limit;
+        $plan->employee_limit=$request->employee_limit;
+        $plan->statistic_limit=$request->statistic_limit;
+        $plan->template_limit=$request->template_limit;
+        $plan->status=$request->status;
+        $plan->featured=$request->featured;
+        $plan->is_default=$request->is_default;
+        $plan->backgroundColor=$request->backgroundColor;
+        $plan->save();
+
+        return response()->json(['Plan Updated']);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        if (!empty($request->type)) {
+         if ($request->type=='delete') {
+             foreach ($request->ids as $row) {
+                Plan::destroy($row);
+            }
+        }
+        
+       }
+        return response()->json(['Plan Deleted']);
+    }
+}

@@ -1,0 +1,145 @@
+@extends('layouts.admin')
+@section('title', 'Admin: Create Plan')
+@section('head')
+<style type="text/css">
+  .is_required{
+    color:red;
+  }
+</style>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-colorpicker.min.css') }}">
+@include('layouts.partials.headersection',['title'=>'Create Plan'])
+@endsection
+@section('content')
+
+<div class="row">
+  <div class="col-12 mt-2">
+    <div class="card">
+      <div class="card-body">
+        <form method="post" action="{{ route('admin.plan.store') }}" class="basicform_with_reset">
+          @csrf
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label>{{ __('Plan Name') }} <span class="is_required">*</span></label>
+                <input type="text" name="name" class="form-control two-space-validation" required> 
+              </div>
+
+              <div class="form-group">
+                <label>{{ __('Plan description') }} <span class="is_required">*</span></label>
+                <input type="text" name="description" class="form-control three-space-validation" required> 
+                
+              </div> 
+
+              <div class="form-group">
+                <label>{{ __('Plan Price') }} <span class="is_required">*</span></label>
+                <input type="tel" step="any" name="price" class="form-control number-validation" maxlength="5" required> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Future Offers Limit') }} <span class="is_required">*</span></label>
+                <input type="tel"  name="future_limit" class="form-control number-validation" maxlength="4" required> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Instant Offers Limit') }} <span class="is_required">*</span></label>
+                <input type="tel"  name="instant_limit" class="form-control number-validation" maxlength="4" required> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Redeem Limit') }} <span class="is_required">*</span></label>
+                <input type="tel"  name="redeem_limit" class="form-control number-validation" maxlength="4" required> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Employee Limit') }} <span class="is_required">*</span></label> 
+                <select class="form-control" name="employee_limit" required>
+                  <option>{{ __('Select Employee Limit') }}</option>
+                  <option value="0">{{ __('No Employee') }}</option>
+                  <option value="5">{{ __('5 Employee') }}</option>
+                  <option value="10">{{ __('10 Employee') }}</option>
+                  <option value="20">{{ __('20 Employee') }}</option>
+                  <option value="50">{{ __('50 Employee') }}</option>
+                </select> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Support Limit') }} <span class="is_required">*</span></label>
+                <select class="form-control" name="support_limit" required>
+                  <option>{{ __('Select Support Limit') }}</option>
+                  <option value="email">{{ __('Email Support') }}</option>
+                  <option value="chat">{{ __('Chat Support') }}</option>
+                  <option value="call">{{ __('Call Support') }}</option>
+                  <option value="email_chat">{{ __('Email & Chat') }}</option>
+                  <option value="email_chat_call">{{ __('Email, Chat & Call') }}</option>
+                </select> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Statistics Limit') }} <span class="is_required">*</span></label>
+                <select class="form-control" name="statistic_limit" required>
+                  <option>{{ __('Select Statistic Limit') }}</option>
+                  <option value="limited">{{ __('Limited') }}</option>
+                  <option value="full">{{ __('Full Statistic') }}</option>
+                </select> 
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Templates Limit') }} <span class="is_required">*</span></label>
+                <input type="tel"  name="template_limit" class="form-control number-validation" maxlength="4" required> 
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary basicbtn" type="submit" >{{ __('Save') }}</button>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>{{ __('Duration') }} <span class="is_required">*</span></label>
+                <select class="form-control" name="days">
+                  <option value="365">{{ __('Yearly') }}</option>
+                  <option value="30">{{ __('Monthly') }}</option>
+                  <option value="7">{{ __('Weekly') }}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>{{ __('Is Featured ?') }} <span class="is_required">*</span></label>
+                <select class="form-control" name="featured">
+                  <option value="0">{{ __('No') }}</option>
+                  <option value="1">{{ __('Yes') }}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>{{ __('Is Default ?') }} <span class="is_required">*</span></label>
+                <select class="form-control" name="is_default">
+                  <option value="0">{{ __('No') }}</option>
+                  <option value="1">{{ __('Yes') }}</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>{{ __('Status') }} <span class="is_required">*</span></label>
+                <select class="form-control" name="status">
+                  <option value="1">{{ __('Enable') }}</option>
+                  <option value="0">{{ __('Disable') }}</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>{{ __('Graph Background') }} <span class="is_required">*</span></label>
+                <input type="text" name="backgroundColor" required class="form-control colorpickerinput" value="">
+              </div>
+            </div>
+          </div>          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+@section('end_body')
+<script src="{{ asset('assets/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/form.js') }}"></script>
+    <script src="{{ asset('assets/js/input-validation.js') }}"></script>
+@endsection
+

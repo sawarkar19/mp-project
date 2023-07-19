@@ -1,0 +1,70 @@
+version: '3'
+services:
+
+  # PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: digitalocean.com/php
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: openchallengeuat
+      DB_USERNAME: root
+      DB_PASSWORD: 123
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www/
+      - ./php/local.ini/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  # Nginx Service
+  webserver:
+    image: nginx:latest
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+  # MySQL Service
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: openchallengeuat
+      MYSQL_ROOT_PASSWORD: 123
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./db_scripts:/docker-entrypoint-initdb.d  # Mount the db_scripts directory
+    networks:
+      - app-network
+
+# Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+# Volumes
+volumes:
+  dbdata:
+

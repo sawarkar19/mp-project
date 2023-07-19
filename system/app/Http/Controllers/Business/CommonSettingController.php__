@@ -1,0 +1,178 @@
+<?php
+
+namespace App\Http\Controllers\Business;
+
+use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+
+use App\Models\EmailJob;
+use App\Models\Userplanmeta;
+use App\Models\Userplan;
+use App\Models\User;
+use App\Models\RedeemDetail;
+use App\Models\Offer;
+use App\Models\Option;
+use App\Models\Plan;
+use App\Models\WhatsappPost;
+use App\Models\UserRecharge;
+use App\Models\Userrechargemeta;
+use App\Models\Recharge;
+
+use Carbon\Carbon;
+use Auth;
+
+class CommonSettingController extends Controller
+{
+    //
+
+    static function getNotification(){
+        $notifications = EmailJob::where('user_id',Auth::id())->where('mark_deleted','0')->orderBy('created_at','desc')->limit(3)->get();
+
+        return $notifications;
+    }
+
+    static function getPlanDetails(){
+        
+        $todays_date = date('Y-m-d');
+        $planDetails = Userplan::with('plan_info','payment_method','feature')->where('status',1)->where('will_expired','>=',$todays_date)->where('user_id',Auth::id())->groupBy('feature_id')->orderBy('id', 'desc')->get();
+        $planIds = Userplan::with('plan_info','payment_method','feature')->where('status',1)->where('user_id',Auth::id())->where('will_expired','>=',$todays_date)->whereNotIn('feature_id', [1,2])->groupBy('feature_id')->orderBy('id', 'desc')->pluck('feature_id')->toArray();
+        $planData = array();
+
+        $employees = $d2c = 0;
+
+        $planData['share_rewards'] = 0;
+        $planData['openlink_api'] = 0;
+        $planData['make_share'] = 0;
+        $planData['social_media'] = 0;
+        $planData['customised_wishing'] = 0;
+        $planData['d2c_post'] = 0;
+        $planData['employee_account'] = 0;
+        $planData['instant_rewards'] = 0;
+
+        if(count($planDetails) > 0){
+            $planData['details'] = $planDetails;
+            $planData['ids'] = $planIds;
+            $planData['is_paid'] = 1;
+
+            foreach($planDetails as $plan){
+                /*Employees*/
+                if($plan->feature_id == 4){
+                    $employees = $employees + 1;
+                } 
+                if($plan->feature_id == 5){
+                    $employees = $employees + 1;
+                }
+                if($plan->feature_id == 6){
+                    $employees = $employees + $plan->allowed_qty;
+                }  
+
+                /*D2C*/
+                if($plan->feature_id == 7){
+                    $first_current_month = Carbon::now()->startOfMonth()->toDateString();
+                    $last_current_month = Carbon::now()->endOfMonth()->toDateString();
+                    $d2c_post_count = WhatsappPost::where('user_id',Auth::id())->whereBetween('created_at', [$first_current_month." 00:00:00", $last_current_month." 23:59:59"])->count();
+
+                    $d2c = $d2c + ($plan->allowed_qty - $d2c_post_count);
+                }  
+// dd($planData);
+
+                $planData[$plan->feature->slug] = 1;
+            }
+            $planData['employees'] = $employees;
+            $planData['d2c'] = $d2c;
+        }else{  
+            $planData['details'] = array();
+            $planData['ids'] = array();
+            $planData['is_paid'] = 0;
+            $planData['employees'] = $employees;
+            $planData['d2c'] = $d2c;
+        }
+// dd($planData);
+
+        return $planData;
+    }
+
+    static function getRechargeDetails(){
+        
+        $rechargeDetails = UserRecharge::where('user_id',Auth::id())->orderBy('id', 'desc')->first();
+        $rechargeData = array();
+
+        if($rechargeDetails != null){
+            $rechargeData['is_paid'] = 1;
+        }else{
+            $rechargeData['is_paid'] = 0;
+        }
+
+        // return $rechargeData;
+        return $rechargeDetails;
+    }
+
+    static function businessSettings(){
+        $guide_page=Option::where('key','guide_link')->first();
+        $ask_for_invoice=Option::where('key','ask_for_invoice')->first();     
+        $invoice_required=Option::where('key','invoice_required')->first();
+        $ask_for_name=Option::where('key','ask_for_name')->first();
+        $ask_for_dob=Option::where('key','ask_for_dob')->first();
+        $ask_for_anniversary_date=Option::where('key','ask_for_anniversary_date')->first();
+        $name_required=Option::where('key','name_required')->first();
+        $dob_required=Option::where('key','dob_required')->first();
+        $anniversary_date_required=Option::where('key','anniversary_date_required')->first();
+
+        $businessSettings = array();
+        $businessSettings['guide_page'] = $guide_page->value;
+        $businessSettings['ask_for_invoice'] = $ask_for_invoice->value;
+        $businessSettings['invoice_required'] = $invoice_required->value;
+        $businessSettings['ask_for_name'] = $ask_for_name->value;
+        $businessSettings['ask_for_dob'] = $ask_for_dob->value;
+        $businessSettings['ask_for_anniversary_date'] = $ask_for_anniversary_date->value;
+        $businessSettings['name_required'] = $name_required->value;
+        $businessSettings['dob_required'] = $dob_required->value;
+        $businessSettings['anniversary_date_required'] = $anniversary_date_required->value;
+
+        return $businessSettings;
+    }
+
+    static function expiredOffers(){
+        $todays_date = date('Y-m-d');
+        $offer_ids = Offer::where('end_date','<',$todays_date)->where('user_id',Auth::id())->pluck('id')->toArray();
+        if(!empty($offer_ids)){
+            Offer::whereIn('id', $offer_ids)->update(['status' => 0]);
+        }
+        return true;
+    }
+
+    static function cmp($a, $b)
+    {
+        if($a['unique_clicks']==$b['unique_clicks']) return 0;
+        return $a['unique_clicks'] < $b['unique_clicks']?1:-1;
+    }
+    
+    public function setBillingType(Request $request)
+    {
+        $planData = Session([
+            'payble_price'   =>  $request->payble_price,
+            'base_price'   =>  $request->base_price,
+            'billing_type'   =>  $request->billing_type
+        ]);
+        return response()->json(['status' => true, 'planData' => $planData]);
+    }
+    
+    static function getDatesArray($planId,$firstMonthStartDate){
+		$planDetails = Plan::where('id',$planId)->first();
+		if(!empty($planDetails)){
+			$toatalDays = $planDetails->days;
+			$months = (int)( $toatalDays / 30 );
+			$datesArray = [];
+			for($i=1; $i<=$months;$i++){
+				$createdAt = Carbon::parse($firstMonthStartDate);
+				$newDateTime = $createdAt->addDays(30)->format('Y-m-d');
+				$datesArray[] = ['startDate'=>$firstMonthStartDate,'endDate'=>$newDateTime];
+				$firstMonthStartDate = $newDateTime;
+			}
+		}
+		return $datesArray;
+		//dd($monthsArray);
+	}
+}

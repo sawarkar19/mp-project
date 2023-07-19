@@ -1,0 +1,29 @@
+image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+
+stages:
+  - staging
+  - production
+
+stage_job:
+  stage: staging
+  script:
+  - mv appspec-stage.yml appspec.yml
+  - aws deploy push --application-name open-challenge-gitlab-stage-application --s3-location s3://open-challenge-gitlab-root-stage-pipeline/web-stage.zip --source /$CI_PROJECT_DIR
+  - aws deploy create-deployment --application-name open-challenge-gitlab-stage-application --deployment-group-name open-challenge-gitlab-root-stage-group --s3-location bucket=open-challenge-gitlab-root-stage-pipeline,bundleType=zip,key=web-stage.zip
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR
+  only:
+  - stage
+
+prod_job:
+  stage: production
+  script:
+  - mv appspec-prod.yml appspec.yml
+  - aws deploy push --application-name open-challenge-gitlab-production-application --s3-location s3://open-challenge-gitlab-root-production-pipeline/web-prod.zip --source /$CI_PROJECT_DIR
+  - aws deploy create-deployment --application-name open-challenge-gitlab-production-application --deployment-group-name open-challenge-gitlab-root-production-group --s3-location bucket=open-challenge-gitlab-root-production-pipeline,bundleType=zip,key=web-prod.zip
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR
+  only:
+  - prod

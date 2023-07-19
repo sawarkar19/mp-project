@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 395.25 713.11">
+	<defs>
+		<style> 
+			 <!-- .line{
+				animation: arrow 4s infinite;
+                -webkit-animation: arrow 4s infinite;
+			}
+			@keyframes arrow {
+              0% {transform: rotate(259deg);}
+              100% {transform: rotate(0deg);}
+            }
+            @-webkit-keyframes arrow {
+              0% {transform: rotate(259deg);}
+              100% {transform: rotate(0deg);}
+            } -->
+            
+			.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}
+		</style>
+		<linearGradient id="linear-gradient" x1="-106.17" y1="753.94" x2="-106.17" y2="752.94" gradientTransform="matrix(329.11, 0, 0, -675.58, 35173.59, 509351.59)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00ffaf"/><stop offset="0.06" stop-color="#00edad"/><stop offset="0.32" stop-color="#00a6a7"/><stop offset="0.55" stop-color="#006ea2"/><stop offset="0.75" stop-color="#00469f"/><stop offset="0.91" stop-color="#002d9d"/><stop offset="1" stop-color="#00249c"/></linearGradient><linearGradient id="linear-gradient-2" x1="-106.95" y1="752.54" x2="-106.95" y2="751.54" gradientTransform="matrix(0, -84.47, -73.31, 0, 55170.25, -8362.96)" xlink:href="#linear-gradient"/> 
+		 
+	</defs>
+	<g id="Layer_2" class="line" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1">
+			<path class="cls-1" d="M66.14,675.58h0V660.31a321.18,321.18,0,0,0,222.77-97.18,321.89,321.89,0,0,0,0-450.68A321.13,321.13,0,0,0,66.14,15.28V0C75,.21,83.84.76,92.51,1.65a334.68,334.68,0,0,1,96.78,24.81,337,337,0,0,1,57.28,31.15,339.5,339.5,0,0,1,49.91,41.26,340.85,340.85,0,0,1,41.18,50,338.51,338.51,0,0,1,31.09,57.4A337.55,337.55,0,0,1,388.4,269.7q3.39,16.64,5.11,33.55,1.73,17.22,1.74,34.55t-1.74,34.54q-1.72,16.89-5.11,33.55a336.34,336.34,0,0,1-50.74,120.82A339.4,339.4,0,0,1,246.57,618a337,337,0,0,1-57.28,31.15A335.46,335.46,0,0,1,126,668.82q-16.6,3.39-33.48,5.12C83.84,674.82,75,675.37,66.14,675.58Z"/><path class="cls-2" d="M0,670.88l73.31-42.23v84.46Z"/>
+		</g>
+	</g>
+</svg>

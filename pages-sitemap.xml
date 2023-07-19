@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <sitemap>
+  <loc>https://openchallenge.in</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/about-us</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/pricing</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/how-it-works</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/blogs</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/faqs</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/contact-us</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://openchallenge.in/pr-news</loc>
+ </sitemap>
+</sitemapindex>

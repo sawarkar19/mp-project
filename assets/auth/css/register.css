@@ -1,0 +1,70 @@
+.star { color:red; }
+.error { 
+    color:#ff0000; 	
+	font-size: 15px;
+  text-align: center;
+	/*padding-top: 20px;*/
+}
+.success {
+	color: green;	
+	text-align: center;
+	font-size: 15px;
+	/*padding-top: 20px;*/
+}
+#valsession {	
+	width: 79%;
+	margin: 0 auto;
+	color: green;
+	background: #ffffff;
+	text-align: center;
+	padding: 7px;
+	font-size: 20px;
+}
+
+#valedit {
+	background: #ffffff !important;
+	text-align: center;
+	color: green;
+	pointer-events: none;
+	border:0px solid red;
+}
+.center
+{
+  text-align: center;
+}
+.card .card-header h4
+{
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+	#front_page, #button_otp, #second_page, #button_otpVer
+	{
+		width: 50%;
+		margin: 0 auto;
+	}
+	.pencil-img
+	{
+		width: 25px;
+		height: 25px;
+	}
+}
+.login-brand img
+{
+  box-shadow: unset;
+}
+@media only screen and (max-width: 600px) {
+	#valsession
+	{
+		width: 100%;
+	}
+	.pencil-img
+	{
+		width: 25px;
+		height: 25px;
+	}
+	#third_page .col-6
+	{
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}

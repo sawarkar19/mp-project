@@ -1,0 +1,218 @@
+/* Scrollbar CSS */
+::-webkit-scrollbar-track{
+	width: 0px;
+	border-radius: 0px;
+	background-color: transparent;
+}
+::-webkit-scrollbar{
+	width: 0px;
+    background-color: #FFF;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 0px;
+    background-color: var(--color-thm-lth);
+}
+/* Scrollbar css End */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-family:var(--font-h1);
+}
+
+/* BUTTONS */
+.btn{
+    font-family: var(--font-h1);
+}
+.btn-theme{
+    color: var(--text-light-color);
+    /* text-transform: uppercase; */
+    font-family: var(--font-h1);
+    font-weight: 600;
+    padding: .5rem 1.5rem;
+    /* transition: all 500ms ease-in-out; */
+    border: 0px;
+    /* background: var(--color-thm-shd); */
+    background-image: linear-gradient(to right, var(--color-thm-lth) 0%, #00ffdc 50%, var(--color-thm-lth) 100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+}
+.btn-theme:hover{
+    /* background: #FFF; */
+    /* color: var(--color-thm-drk); */
+    /* border: 1px solid var(--color-thm-drk); */
+    color: #FFFFFF;
+    background-position: right center;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-app{
+    background: transparent;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
+    font-family: var(--font-h1);
+    font-weight: 400;
+    font-size: .9rem;
+    color: inherit;
+    padding: .5rem .5rem;
+    transition: all 300ms ease-in-out;
+    width: 160px;
+    position: relative;
+    text-align: left;
+    border:0px;
+    border-radius: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: inherit;
+    box-shadow: none!important;
+    outline: none!important;
+    line-height: 1;
+}
+.btn-app i{
+    float: right;
+}
+.btn-app:hover{
+    border-color: var(--color-thm-lth);
+    color: var(--color-thm-drk);
+}
+.btn-app.btn-sm{
+    letter-spacing: 0px;
+    font-size: 12px;
+    padding: .2rem 0rem;
+    width: 100px;
+}
+
+
+/* heading font line height */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    line-height: 1.5;
+}
+
+
+/* fonts */
+.font-h1{ font-family: var(--font-h1)!important }
+.font-h2{ font-family: var(--font-h2)!important }
+.font-t1{ font-family: var(--font-t1)!important }
+
+/* Font Weights */
+.font-100{ font-weight: 100!important;}
+.font-200{ font-weight: 200!important;}
+.font-300{ font-weight: 300!important;}
+.font-400{ font-weight: 400!important;}
+.font-500{ font-weight: 500!important;}
+.font-600{ font-weight: 600!important;}
+.font-700{ font-weight: 700!important;}
+.font-800{ font-weight: 800!important;}
+.font-900{ font-weight: 900!important;}
+
+/* Font Sizes */
+.font-small{ font-size: 80%!important;}
+.font-normal{ font-size: 100%!important;}
+.font-large{ font-size: 110%!important;}
+.font-xlarge{ font-size: 120%!important;}
+
+/* Colors  */
+.color-lht{color: var(--color-thm-lth)!important;}
+.color-drk{color: var(--color-thm-drk)!important;}
+
+.color-text-gradient{
+    background: linear-gradient(90deg, var(--color-thm-lth) 20%, var(--color-thm-drk) 120%);
+    -webkit-background: -webkit-linear-gradient(90deg, var(--color-thm-lth) 20%, var(--color-thm-drk) 120%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.color-text-gradient-lighter{
+    background: linear-gradient(90deg, var(--color-thm-lth) -10%, var(--color-thm-drk) 70%);
+    -webkit-background: -webkit-linear-gradient(90deg, var(--color-thm-lth) -10%, var(--color-thm-drk) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* FORMs  */
+form.line-form,
+.line-inputs{
+    position: relative;
+}
+form.line-form .form-group,
+form.line-form .form-check,
+
+.line-inputs .form-group,
+.line-inputs .form-check
+{
+    margin-bottom: 30px;
+}
+/* form.line-form .form-group > label{
+    display: none;
+} */
+form.line-form .form-check > label,
+.line-inputs .form-check > label{
+    color: #FFF;
+    line-height: 1.7;
+}
+form.line-form .form-group > .form-control,
+.line-inputs .form-group > .form-control{
+    background-color: transparent;
+    color: #FFF;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 2px solid #FFF;
+    outline: none!important;
+    box-shadow: none!important;
+    font-family: var(--font-h1);
+    font-size: 1rem;
+}
+form.line-form .form-check > .form-check-input,
+.line-inputs .form-check > .form-check-input{
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 10px;
+    background-color: transparent;
+    border-color: #FFF;
+    box-shadow: none!important;
+}
+
+
+.lh-2{
+    line-height: 2!important;
+}
+
+
+.text-justify{
+    text-align: justify!important;
+}
+
+/*Contact Page*/
+.oplk-color-gradient{
+    background: #00FFAF;
+    background: -webkit-repeating-linear-gradient(to right, #00FFAF 0%, #00249C 100%);
+    background: -moz-repeating-linear-gradient(to right, #00FFAF 0%, #00249C 100%);
+    background: repeating-linear-gradient(to right, #00FFAF 0%, #00249C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.oplk-background-color-gradient{
+    background: rgba(0,255,175,0.2);
+    background: linear-gradient(316deg,rgba(0,255,175,0.2) 2%, rgba(0,36,156,0.2) 100%);
+    background: -webkit-linear-gradient(316deg,rgba(0,255,175,0.2) 2%, rgba(0,36,156,0.2) 100%);
+    background: -moz-linear-gradient(316deg,rgba(0,255,175,0.2) 2%, rgba(0,36,156,0.2) 100%);
+}
+/*Contact Page*/
+
+.oplk-text-gradient{
+    background: #00FFAF;
+    background: -webkit-linear-gradient(115deg, #00FFAF 0%, #00249C 80%);
+    background: -moz-linear-gradient(115deg, #00FFAF 0%, #00249C 80%);
+    background: linear-gradient(115deg, #00FFAF 0%, #00249C 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.oplk-bg-color-gradient{
+    background: #00ffaf;
+    background: linear-gradient(64deg,#00ffaf 0%, #00249c 80%);
+    background: -webkit-linear-gradient(64deg,#00ffaf 0%, #00249c 80%);
+    background: -moz-linear-gradient(64deg,#00ffaf 0%, #00249c 80%);
+}

@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+/*:root{
+    --color-business-name: #191d21;
+    --color-tag-line: #191d21;
+
+    --color-temp-head: #FFF;
+    --color-temp-text: #FFF;
+
+    --color-text-color: #FFF;
+
+    --color-background: #000;
+
+    --color-image-title1: #191d21;
+    --color-image-title2: #191d21;
+    --color-image-title3: #191d21;
+
+    --color-icon-website: #191d21;
+    --color-icon-location: #191d21;
+    --color-icon-whatsapp: #191d21;
+    --color-icon-contact: #191d21;
+
+    --color-extra-head: #191d21;
+    --color-extra-text: #191d21;
+}*/
+
+.template-container{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: var(--color-default-color);
+    position: relative;
+    width: 100%;
+    max-width: 991px;
+    margin-bottom: 3rem;
+    margin: auto;
+    z-index: 1;
+    font-weight: 300;
+}
+.template-main{
+    position: relative;
+    width: 100%;
+    background-position: top center;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    background-color: var(--color-background);
+}
+
+.template-container h1,
+.template-container h2,
+.template-container h3,
+.template-container h4,
+.template-container h5,
+.template-container h6{
+    font-family: 'Playfair Display', serif;
+}
+
+.template-container .busines-name h1{color: var(--color-business-name);}
+.template-container .busines-name p{color: var(--color-tag-line);}
+.template-container #tem_heading{color: var(--color-temp-head);}
+.template-container #tem_text{color: var(--color-text-color);}
+.template-container #tem_image_title_1{color: var(--color-image-title1);}
+.template-container #tem_image_title_2{color: var(--color-image-title2);}
+.template-container #tem_image_title_3{color: var(--color-image-title3);}
+.template-container .bi-telephone::before{color: var(--color-icon-contact);}
+.template-container .bi-whatsapp::before{color: var(--color-icon-whatsapp);}
+.template-container .bi-geo-alt::before{color: var(--color-icon-location);}
+.template-container .bi-globe2::before{color: var(--color-icon-website);}
+.template-container #extra_heading_1{color: var(--color-extra-head);}
+.template-container #extra_text_1{color: var(--color-extra-text);}
+
+.tmplt-container{
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    margin: auto;
+}
+.main_image{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    max-width: 350px;
+}
+.main_image img {
+    width: 100%;
+    max-width: 350px;
+}
+.temp-container{
+    max-width: 800px;
+    margin: auto;
+}
+
+.bg-color{
+    background-color: #EFEADE;
+}
+.logo{
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 30px;
+    width: 80px;
+}
+.banner-image img{
+    border-radius: 14px;
+}
+.border-banner{
+    border: 1px solid #BA9820;
+}
+.border-text{
+    border: 3px solid #000000;
+    max-width: 350px;
+    margin: auto;
+    position: relative;
+}
+.banHead1{
+    position: absolute;
+    top: -53%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: #efeade;
+    /* font-size: 60px; */
+    font-weight: 700;
+}
+.banHead2{
+    
+    font-weight: 700;
+}
+.columns{
+    width: 100%;
+}
+.product-card-brand{
+    position: relative;
+    width: 100%;
+}
+.product-card-brand .img-thumb-brand{
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
+.product-card{
+    position: relative;
+    width: 100%;
+    padding: 10px 10px 0 10px;
+}
+.product-card .img-thumb{
+    position: relative;
+    width: 100%;
+    padding-bottom: 126%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+.gallery-img-bg{
+    background: #F2E7C2;
+    border: 1px solid #C6AC61;
+}
+
+/* .product-card .img-thumb::after{
+    content: attr(tag-name);
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 16px;
+    color: #FFF;
+    padding: 1px 15px;
+} */
+.image-brand-section{
+    border: 2px solid #E4A003;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 134px;
+}
+.inner-image-brand{
+    background: #F8F2ED;
+    border-radius: 134px;
+    margin: 10px;
+}
+.bg-color-footer{
+    background-color: #EFEADE;
+}
+
+.social-icons{
+    position: relative;
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 10px;
+}
+.social-icons .si-tab{
+    display: inline-block;
+    margin: 0 5px;
+}
+.social-icons .si-tab > a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: all 100ms ease;
+    color: inherit;
+}
+.social-icons .si-tab > a:hover{
+    color: var(--color-text-color);
+}
+.social-icons .si-tab > a > i{
+    line-height: 32px;
+    font-size: 22px;
+}
+
+.contact-section{
+    list-style: none;
+    padding-left: 0px;
+    position: relative;
+    margin-bottom: 0px;
+}
+.contact-section li{
+    display: inline-block;
+    margin: 0 -3px; 
+}
+.contact-section li a{
+    font-size: 22px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 51px;
+    transition: all 200ms ease;
+    background: #F2E7C2;
+    border: 1px solid #C6AC61;
+    margin: 0 20px;
+}
+.call-to-action .btn-call-act {
+    font-size: 20px;
+    padding: 5px 30px;
+    /*background-color: #D44800;*/
+    line-height: 1.5;
+    border-radius: 0px;
+    box-shadow: -1px 1px 3px rgb(0 0 0 / 20%);
+}
+  
+@media (max-width:767px) {
+    .contact-section{
+        justify-content: center;
+    }
+    .temp-container{
+        max-width: 820px;
+        margin: auto;
+    }
+}
+@media (max-width:575px) {
+    .product-card .img-thumb {
+        width: 100%;
+        padding-bottom: 100%;
+        margin: 0px auto;
+    }
+    .brand-head-text{
+        font-size: 30px;
+    }
+    .image-brand-section {
+        border-radius: 238px;
+    }
+    .inner-image-brand {
+        border-radius: 230px;
+    }    
+}  
+

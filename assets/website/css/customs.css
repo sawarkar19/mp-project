@@ -1,0 +1,54 @@
+.font-family-head{font-family:var(--font-family-head)}
+.font-family-text{font-family:var(--font-family-text)}
+.font-100{font-weight:100!important}
+.font-200{font-weight:200!important}
+.font-300{font-weight:300!important}
+.font-400{font-weight:400!important}
+.font-500{font-weight:500!important}
+.font-600{font-weight:600!important}
+.font-700{font-weight:700!important}
+.font-800{font-weight:800!important}
+.font-900{font-weight:900!important}
+.font-small{font-size:80%!important}
+.font-normal{font-size:100%!important}
+.font-large{font-size:110%!important}
+.font-xlarge{font-size:120%!important}
+.text-justify{text-align:justify!important}
+.color-one{color:rgb(var(--color-one))!important}
+.bg-color-one{background-color:rgb(var(--color-one))!important}
+.color-primary{color:rgba(var(--color-primary),1)!important}
+.bg-color-primary{background-color:rgba(var(--color-primary),1)!important}
+.color-gradient{background:rgba(var(--color-primary),1);background:linear-gradient(115deg,rgba(var(--color-one),1) 0,rgba(var(--color-two),1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.bg-color-gradient{background:rgba(var(--color-primary),1);background:transparent linear-gradient(316deg,rgba(var(--color-one),1) 0,rgba(var(--color-two),1) 100%) 0 0 no-repeat padding-box}
+.bg-color-gradient-light{background:rgba(var(--color-primary),1);background:transparent linear-gradient(316deg,rgba(var(--color-one),.3) 0,rgba(var(--color-two),.3) 100%) 0 0 no-repeat padding-box}
+.btn-primary-ol{background:transparent linear-gradient(108deg,rgba(var(--color-one),1) 0,rgba(var(--color-two),1) 100%) 0 0 no-repeat padding-box;color:#fff;font-weight:600;border:0!important}
+.btn-primary-ol:hover{color:#fff!important}
+.btn-primary-ol.disabled,.btn-primary-ol:active,.btn-primary-ol:disabled,.btn-primary-ol:focus{color:#e2e2e2!important}
+.btn-link-ol{background:0 0;color:rgba(var(--color-primary),1);font-weight:600;border:0!important;padding:.5rem 0}
+.sub-heading{letter-spacing:.6rem}
+.form-type-one .form-control{padding:.7rem 1rem;font-size:.9rem;font-weight:600;outline:0!important;border-color:#888}
+.form-type-one .form-control:focus{border-color:rgb(var(--color-primary))}
+.ol-modal.popin{-webkit-animation:popin .3s;animation:popin .3s}
+@keyframes popin{
+0%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);opacity:0}
+85%{-webkit-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05);opacity:1}
+100%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);opacity:1}
+}
+@-webkit-keyframes popin{
+0%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);opacity:0}
+85%{-webkit-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05);opacity:1}
+100%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);opacity:1}
+}
+@media (min-width:930px){
+.ol-modal .modal-dialog{max-width:900px}
+}
+.bi-spin:before{-webkit-animation:spinner 2s linear infinite;animation:spinner 2s linear infinite}
+@keyframes spinner{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+@-webkit-keyframes spinner{
+from{-webkit-transform:rotate(0)}
+to{-webkit-transform:rotate(360deg)}
+}
+.social-tooltip{--bs-tooltip-bg:rgb(var(--color-primary), 1)}

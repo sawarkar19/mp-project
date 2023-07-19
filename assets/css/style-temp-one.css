@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap');
+:root{
+    --font-head: 'Playfair Display', serif;
+    --font-text: 'Roboto', sans-serif;
+}
+body{
+    font-family: var(--font-text);
+    font-weight: 200;
+}
+
+
+header{
+    text-align: center;
+}
+.tm1_logo img{
+    width: 150px;
+    max-width: 100%;
+}
+
+._content_{
+    position: relative;
+}
+._content_ .content_tab{
+    position: relative;
+    width: 100%;
+    top: -50px;
+    background-color: #FFF;
+    padding: 3rem;
+}
+
+.footer_tab{
+    color: #FFF;
+    /* text-align: center; */
+}
+.footer_tab ul{
+    list-style: none;
+    padding-left: 0px;
+}
+.footer_tab ul > li{
+    margin-bottom: .5rem;
+}
+.footer_tab ul > li > a{
+    text-decoration: none;
+    color: inherit;
+    transition: all 300ms ease;
+    padding-left: 0rem;
+}
+.footer_tab ul > li > a:hover{
+    padding-left: .5rem;
+}
+@media (max-width:540px) {
+    ._content_ .content_tab{
+        top: -20px;
+        padding: 1rem;
+    }
+}
+
+
+
+
+
+/* SET CUSTOM CLASSES */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.font-head{
+    font-family: var(--font-head)!important;
+}
+.ls-1{
+    letter-spacing: 1px!important;
+}
+.ls-2{
+    letter-spacing: 2px!important;
+}

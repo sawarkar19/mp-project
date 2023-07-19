@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <sitemap>
+  <loc>https://mouthpublicity.io</loc>
+ </sitemap>
+ <sitemap>
+  <loc>https://mouthpublicity.io/pages-sitemap.xml</loc>
+  <lastmod>2023-04-03T18:29:09+05:30</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mouthpublicity.io/blogs-sitemap.xml</loc>
+  <lastmod>2023-04-03T18:29:09+05:30</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mouthpublicity.io/ebooks-sitemap.xml</loc>
+  <lastmod>2023-04-03T18:29:09+05:30</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mouthpublicity.io/articles-sitemap.xml</loc>
+  <lastmod>2023-04-03T18:29:09+05:30</lastmod>
+ </sitemap>
+</sitemapindex>

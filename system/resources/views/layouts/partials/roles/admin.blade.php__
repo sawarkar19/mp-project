@@ -1,0 +1,203 @@
+<li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.dashboard') }}">
+        <i class="flaticon-dashboard"></i>
+        <span>{{ __('Dashboard') }}</span>
+    </a>
+</li>
+<li class="{{ Request::is('admin/order*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.order.index') }}">
+        <i class="flaticon-note"></i>
+        <span>{{ __('Subscriptions') }}</span>
+    </a>
+</li>
+<li class="dropdown {{ Request::is('admin/plan*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-pricing"></i> <span>{{ __('Plans') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+            <li>
+                <a class="nav-link {{ Request::is('admin/plan/create') ? 'active' : '' }}" href="{{ route('admin.plan.create') }}">
+                    {{ __('Create') }}
+                </a>
+            </li>
+            <li>
+                <a class="nav-link {{ Request::is('admin/plan') ? 'active' : '' }}" href="{{ route('admin.plan.index') }}">
+                    {{ __('All Plans') }}
+                </a>
+            </li>
+    </ul>
+</li>
+<li class="dropdown {{ Request::is('admin/customer*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-customer"></i> <span>{{ __('Subscribers') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+            <li>
+                <a class="nav-link {{ Request::is('admin/customer/create') ? 'active' : '' }}" href="{{ route('admin.customer.create') }}">
+                    {{ __('Create') }}
+                </a>
+            </li>
+            <li>
+                <a class="nav-link {{ Request::is('admin/customer') ? 'active' : '' }}" href="{{ route('admin.customer.index') }}">
+                    {{ __('All Subscribers') }}
+                </a>
+            </li>
+    </ul>
+</li>
+
+<li class="dropdown {{ Request::is('admin/page*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-pricing"></i> <span>{{ __('Pages') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/page/create') ? 'active' : '' }}" href="{{ route('admin.page.create') }}">
+                {{ __('Create') }}
+            </a>
+        </li>
+        <li>
+            <a class="nav-link {{ Request::is('admin/page') ? 'active' : '' }}" href="{{ route('admin.page.index') }}">
+                {{ __('All Pages') }}
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="dropdown {{ Request::is('admin/blog*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-pricing"></i> <span>{{ __('Blogs') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/blog/create') ? 'active' : '' }}" href="{{ route('admin.blog.create') }}">
+                {{ __('Create') }}
+            </a>
+        </li>
+        <li>
+            <a class="nav-link {{ Request::is('admin/blog') ? 'active' : '' }}" href="{{ route('admin.blog.index') }}">
+                {{ __('All Blogs') }}
+            </a>
+        </li>
+        <li>
+            <!--<a class="nav-link {{ Request::is('admin/blog/setting') ? 'active' : '' }}" href="#">-->
+            <a class="nav-link {{ Request::is('admin/blog/setting') ? 'active' : '' }}" href="{{ route('admin.blogs.settings') }}">
+                {{ __('Settings') }}
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="dropdown {{ Request::is('admin/article*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-pricing"></i> <span>{{ __('Articles') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/article/create') ? 'active' : '' }}" href="{{ route('admin.article.create') }}">
+                {{ __('Create') }}
+            </a>
+        </li>
+        <li>
+            <a class="nav-link {{ Request::is('admin/article') ? 'active' : '' }}" href="{{ route('admin.article.index') }}">
+                {{ __('All Articles') }}
+            </a>
+        </li>
+        <li>
+            <!--<a class="nav-link {{ Request::is('admin/article/setting') ? 'active' : '' }}" href="#">-->
+            <a class="nav-link {{ Request::is('admin/article/setting') ? 'active' : '' }}" href="{{ route('admin.articles.settings') }}">
+                {{ __('Settings') }}
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="dropdown {{ Request::is('admin/ebook*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-pricing"></i> <span>{{ __('Ebooks') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/ebook/create') ? 'active' : '' }}" href="{{ route('admin.ebook.create') }}">
+                {{ __('Create') }}
+            </a>
+        </li>
+        <li>
+            <a class="nav-link {{ Request::is('admin/ebook') ? 'active' : '' }}" href="{{ route('admin.ebook.index') }}">
+                {{ __('All Ebooks') }}
+            </a>
+        </li>
+        {{-- <li>
+            <a class="nav-link {{ Request::is('admin/ebook/setting') ? 'active' : '' }}" href="{{ route('admin.ebooks.settings') }}">
+                {{ __('Settings') }}
+            </a>
+        </li> --}}
+    </ul>
+</li>
+
+<li class="dropdown {{ Request::is('admin/locations*') ? 'active' : '' }}">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+        <i class="flaticon-pricing"></i> <span>{{ __('Locations') }}</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/locations/states') ? 'active' : '' }}" href="{{ route('admin.states.index') }}">
+                {{ __('All States') }}
+            </a>
+        </li>
+        <li>
+            <a class="nav-link {{ Request::is('admin/locations/cities') ? 'active' : '' }}" href="{{ route('admin.cities.index') }}">
+                {{ __('All Cities') }}
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="{{ Request::is('admin/payment-geteway*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.payment-geteway.index') }}">
+        <i class="flaticon-credit-card"></i>
+        <span>{{ __('Payment Gateways') }}</span>
+    </a>
+</li>
+
+{{-- <li class="dropdown {{ Request::is('admin/appearance*') ? 'active' : '' }}  {{ Request::is('admin/gallery*') ? 'active' : '' }} {{ Request::is('admin/menu*') ? 'active' : '' }} {{ Request::is('admin/seo*') ? 'active' : '' }}">
+  <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="flaticon-settings"></i> <span>{{ __('Appearance') }}</span></a>
+  <ul class="dropdown-menu">
+    <li><a class="nav-link" href="{{ route('admin.appearance.show','header') }}">{{ __('Frontend Settings') }}</a></li>
+    <li><a class="nav-link" href="{{ route('admin.menu.index') }}">{{ __('Menu') }}</a></li>
+    <li><a class="nav-link" href="{{ route('admin.seo.index') }}">{{ __('SEO') }}</a></li>
+    <li><a class="nav-link" href="{{ route('admin.page.index') }}">{{ __('Page Settings') }}</a></li>
+  </ul>
+</li> --}}
+
+<li class="{{ Request::is('admin/marketing') ? 'active' : '' }}">
+  <a class="nav-link" href="{{ route('admin.marketing.index') }}">
+   <i class="flaticon-megaphone"></i> <span>{{ __('Marketing Tools') }}</span>
+  </a>
+</li>
+
+<li class="{{ Request::is('admin/seo*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.seo.index') }}">
+        <i class="flaticon-member"></i>
+        <span>{{ __('SEO') }}</span>
+    </a>
+</li>
+
+<li class="dropdown {{ Request::is('admin/site-settings*') ? 'active' : '' }} {{ Request::is('admin/system-environment*') ? 'active' : '' }}">
+  <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="flaticon-settings"></i> <span>{{ __('Settings') }}</span></a>
+  <ul class="dropdown-menu">
+    
+    <li><a class="nav-link" href="{{ route('admin.site.settings') }}">{{ __('Site Settings') }}</a></li>
+
+    <li><a class="nav-link" href="{{ route('admin.business.settings') }}">{{ __('Business Settings') }}</a></li>
+    
+    <li><a class="nav-link" href="{{ route('admin.site.environment') }}">{{ __('System Environment') }}</a></li>
+    
+  </ul>
+</li>
+
+<li class="{{ Request::is('admin/users*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.users.index') }}">
+        <i class="flaticon-member"></i>
+        <span>{{ __('Admins') }}</span>
+    </a>
+</li>

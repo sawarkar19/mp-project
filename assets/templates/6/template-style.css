@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Stick+No+Bills:wght@600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+.template-container{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 16px;
+    color: var(--color-default-color);
+
+    position: relative;
+    width: 100%;
+    max-width: 991px;
+    margin-bottom: 3rem;
+    margin: auto;
+    z-index: 1;
+}
+.template-main{
+    position: relative;
+    width: 100%;
+    background-color: var(--color-background);
+    background-position: top center;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+.template-container h1,
+.template-container h2,
+.template-container h3,
+.template-container h4,
+.template-container h5,
+.template-container h6{
+    font-family: 'Stick No Bills', sans-serif;
+}
+
+.template-container .busines-name .h2{
+    color: var(--color-business-name);
+}
+
+.template-container .busines-name p{
+    color: var(--color-tag-line);
+}
+
+.template-container #tem_heading{
+    color: var(--color-temp-head);
+}
+
+.template-container #tem_text{
+    color: var(--color-text-color);
+}
+
+.template-container #tem_image_title_1{
+    color: var(--color-image-title1);
+}
+
+.template-container #tem_image_title_2{
+    color: var(--color-image-title2);
+}
+
+.template-container #tem_image_title_3{
+    color: var(--color-image-title3);
+}
+
+.template-container .bi-telephone::before{
+    color: var(--color-icon-contact);
+}
+
+.template-container .bi-whatsapp::before{
+    color: var(--color-icon-whatsapp);
+}
+
+.template-container .bi-geo-alt::before{
+    color: var(--color-icon-location);
+}
+
+.template-container .bi-globe2::before{
+    color: var(--color-icon-website);
+}
+
+.template-container #extra_heading_1{
+    color: var(--color-extra-head);
+}
+
+.template-container #extra_text_1{
+    color: var(--color-extra-text);
+}
+.template-container .busines-name p {
+    color: var(--color-tag-line);
+}
+.template-container .busines-name h1 {
+    color: var(--color-business-name);
+}
+
+/* .inner-wrapper{
+    padding: 1rem;
+} */
+
+.logo{
+    position: relative;
+    width: 100px;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+}
+
+.main_image{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.columns{
+    width: 100%;
+    max-width: 290px;
+    padding: 10px;
+    margin: auto;
+}
+.product-card{
+    position: relative;
+    width: 100%;
+}
+.product-card .img-thumb{
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+
+.social-icons{
+    position: relative;
+    list-style: none;
+    padding-left: 0px;
+    text-align: center;
+}
+.social-icons .si-tab{
+    display: inline-block;
+    margin-right: 10px;
+}
+.social-icons .si-tab > a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #000;
+    transform: scale(1);
+    transition: all 200ms ease;
+    color: inherit;
+}
+.social-icons .si-tab > a:hover{
+    transform: scale(1.1);
+}
+.social-icons .si-tab > a > i{
+    line-height: 37px;
+    font-size: 18px;
+}
+.social-icons .si-tab > a.fb{background-color: #3b5998;}
+.social-icons .si-tab > a.ig{background-color: #8a3ab9;}
+.social-icons .si-tab > a.tw{background-color: #1DA1F2;}
+.social-icons .si-tab > a.li{background-color: #0e76a8;}
+.social-icons .si-tab > a.pr{background-color: #E60023;}
+.social-icons .si-tab > a.yt{background-color: #FF0000;}
+.social-icons .si-tab > a.gr{background-color: #c62127;}
+
+.link_domain{
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.contact-section{
+    list-style: none;
+    padding-left: 0px;
+    position: relative;
+    justify-content: center;
+}
+.contact-section li{
+    display: inline-block;
+    margin: 0 5px; 
+}
+.contact-section li a{
+    font-size: 20px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 38px;
+    background-color: #FFF;
+    transition: all 200ms ease;
+}
+.call-to-action .btn-call-act {
+    font-size: 17px;
+    padding: 5px 30px;
+    background-color: #fff;
+    line-height: 1.5;
+    color: #000;
+}
+/*.btn-call-act:hover {
+    background-color: #fff;
+    color: #000;
+}*/
+@media( max-width: 576px){
+    .busines-name{
+        text-align: center;
+    }
+}

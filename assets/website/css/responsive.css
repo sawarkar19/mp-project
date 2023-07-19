@@ -1,0 +1,29 @@
+@media only screen and (min-width:768px){
+.feature-container .feature-text{max-width:var(--width)}
+}
+@media only screen and (min-width:992px){
+nav.navbar .navbar-nav{align-items:center}
+nav.navbar .navbar-nav>.nav-item>.nav-link{padding:1.5rem 1.2rem}
+.bg-dots{position:relative;background-position:top left;background-size:80%;background-repeat:no-repeat;background-image:url(../images/dotted-banner.png)}
+}
+@media only screen and (max-width:991.9px){
+#mainNavCollapse{position:fixed;right:-300px;top:0;background:transparent linear-gradient(108deg,rgba(var(--color-one),1) 0,rgba(var(--color-two),1) 100%) 0 0 no-repeat padding-box;width:295px;max-width:100%;text-align:left;padding:70px 15px 10px 15px;height:100%!important;overflow-y:auto;overflow-x:hidden;box-shadow:0 5px 30px 5px rgb(66 71 76 / 10%);transition:all .2s ease-in-out;border-radius:10px 0 0 10px;z-index:999}
+#mainNavCollapse.show{right:0}
+nav.navbar .navbar-nav>.nav-item>.nav-link{color:#fff;font-weight:600;font-size:1rem;padding:10px}
+.bg-dots{background-size:100%}
+#close_main_navigation{color:#fff}
+}
+@media only screen and (max-width:767px){
+.bg-dots{background-size:140%}
+}
+@media only screen and (max-width:575px){
+.bg-dots{background-size:190%}
+}
+@media only screen and (max-width:480px){
+.b-sidebar::after{bottom:193px}
+.search-form{min-height:85px}
+.blog_card.bl_list .image_thumb{width:100px}
+}
+@media only screen and (max-width:320px){
+.blog_card.bl_list .image_thumb{width:80px}
+}

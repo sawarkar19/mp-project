@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+.template-container{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: var(--color-default-color);
+    position: relative;
+    width: 100%;
+    max-width: 991px;
+    margin-bottom: 3rem;
+    margin: auto;
+    z-index: 1;
+    font-weight: 300;
+}
+.template-main{
+    position: relative;
+    width: 100%;
+    background-position: top center;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 2;
+    background-color: var(--color-background);
+}
+
+.template-container h1,
+.template-container h2,
+.template-container h3,
+.template-container h4,
+.template-container h5,
+.template-container h6{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.template-container .busines-name h1{color: var(--color-business-name);}
+.template-container .busines-name p{color: var(--color-tag-line);}
+.template-container #tem_heading{color: var(--color-temp-head);}
+.template-container #tem_text{color: var(--color-text-color);}
+.template-container #tem_image_title_1{color: var(--color-image-title1);}
+.template-container #tem_image_title_2{color: var(--color-image-title2);}
+.template-container #tem_image_title_3{color: var(--color-image-title3);}
+.template-container .bi-telephone::before{color: var(--color-icon-contact);}
+.template-container .bi-whatsapp::before{color: var(--color-icon-whatsapp);}
+.template-container .bi-geo-alt::before{color: var(--color-icon-location);}
+.template-container .bi-globe2::before{color: var(--color-icon-website);}
+.template-container #extra_heading_1{color: var(--color-extra-head);}
+.template-container #extra_text_1{color: var(--color-extra-text);}
+
+
+.background_c{
+    background-color: #5B0D37;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.logo{
+   /* position: absolute;*/
+    max-width: 100%;
+    margin-top: 60px;
+    /*left: 10%;
+    top: 17%;*/
+    /* margin: 0 auto 10px auto; */
+}
+.logotext{
+        padding-left: 50px;
+    }
+.logo img{
+    width: 100px;
+    max-width: 100%;
+}
+
+.main_image{
+    position: relative;
+}
+.main_image1{
+    border-radius: 30px;
+    /* max-width: 300px; */
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+/*.busines-name{
+    text-align: center;
+}*/
+.hero-banner{
+    position: relative;
+}
+.hero-banner svg{
+    position: absolute;
+    left:0;
+    right: 0;
+    width: 100%;
+    bottom: -1px;
+}
+
+.tmplt-container{
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.text_image{
+    margin-top: 20px;
+    margin-left: 0px;
+}
+.font-700{
+    font-weight: 700;
+}
+
+.middle-area{
+    text-align: center;
+    margin: 30px auto;
+    max-width: 850px;
+}
+.divider{
+    position: relative;
+    margin: 35px auto;
+    height: 1px;
+    width: 150px;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.columns{
+    width: 100%;
+    max-width: 470px;
+    padding: 1px;
+    margin: auto;
+    position: relative;
+   
+}
+.columns .product-card{
+    position: relative;
+    width: 100%;
+}
+.columns .product-card .img-thumb{
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    /* background-color: #fff; */
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+    background-color: #47042F;
+    border-radius: 15px;
+}
+
+.contact-section{
+    list-style: none;
+    padding: 14px 0px;
+    background-color: #47042F;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px -3px 13px 5px rgb(71 4 47 / 47%);
+   
+}
+.contact-section li{
+    display: inline-block;
+    margin: 0 3px; 
+}
+.contact-section li a{
+    font-size: 24px;
+    display: inline-block;
+    text-align: center;
+    line-height: 38px;
+    padding: 0px 18px;
+}
+
+.social-icons{
+    position: relative;
+    list-style: none;
+    padding-left: 0px;
+    /*text-align: center;*/
+}
+.social-icons .si-tab:first-child{
+    margin-left: 0px;
+}
+.social-icons .si-tab{
+    display: inline-block;
+    margin: 0 5px;
+}
+.social-icons .si-tab > a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    /*background-color: #000;*/
+    border: 1px solid #000;
+    color: inherit;
+}
+.social-icons .si-tab > a > i{
+    line-height: 30px;
+    font-size: 13px;
+}
+.call-to-action .btn-call-act {
+    font-size: 16px;
+    padding: 5px 26px;
+    background-color: #5B0D37;
+    line-height: 1.5;
+    color: #fff;
+    box-shadow: -1px 1px 3px rgb(0 0 0 / 20%);
+}
+/*.btn-call-act:hover {
+    background-color: #2e2329 !important;
+    color: #fff;
+}*/
+/* .social-icons .si-tab > a.fb{background-color: #3b5998;}
+.social-icons .si-tab > a.ig{background-color: #8a3ab9;}
+.social-icons .si-tab > a.tw{background-color: #1DA1F2;}
+.social-icons .si-tab > a.li{background-color: #0e76a8;}
+.social-icons .si-tab > a.pr{background-color: #E60023;}
+.social-icons .si-tab > a.yt{background-color: #FF0000;} */
+@media(min-width: 992px){
+    .logotext{
+        padding-left: 0px;
+    }
+    .logo img,
+    .contact-section{
+        margin-left: 0px;
+    }
+}
+@media(min-width: 768px){
+    .main_image1 {
+        max-width: 320px;
+        overflow: hidden;
+        position: absolute;
+        bottom: -42px;
+        right: 0;
+    }
+    .text_image{
+        margin-top: 130px;
+        /* margin-left: 20px; */
+    }
+    .cn-icons-top{
+        position: absolute;
+        top: -38px;
+    }
+    .main_image {
+        margin-right: 30px;
+        margin-top: 0px;
+    }
+    .contact-section{
+        margin-top: 0px;
+        padding: 14px 24px;
+    }
+    /* .logo img,
+    .contact-section{
+        margin-left: 15px;
+    } */
+    
+}
+
+@media (min-width:576px) {
+
+    .busines-name{
+        text-align: left;
+    }
+   
+}
+@media (max-width:991px) {
+    
+    .contact-section{
+        text-align: center;
+    }
+    /*.main_image{
+        margin-right: 10px;
+    }*/
+    /*.cn-icons-top{
+        position: absolute;
+        /*top: -38px;*/
+}
+@media (max-width:767px){
+    .main_image1{
+
+        border-radius: 30px 30px 0px 0px;
+    }
+     .contact-section{
+        box-shadow: none;
+        border-radius: 0px 0px 8px 8px;
+       
+    } 
+    .social-icons{
+        margin: auto;
+    }
+}
